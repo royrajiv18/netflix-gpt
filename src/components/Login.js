@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMAGE, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -46,8 +47,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/15337782?s=400&u=e49123fd9764265f500df50e9efc943e80f01826&v=4",
+            photoURL: { USER_AVATAR },
           })
             .then(() => {
               // Profile updated!
@@ -97,10 +97,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          alt="netflix background"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/154a9550-ce07-4e28-819c-63185dd849f8/web/IN-en-20250106-TRIFECTA-perspective_27b02e7c-f668-4639-9e82-1a5485084b2a_medium.jpg"
-        />
+        <img alt="netflix background" src={BACKGROUND_IMAGE} />
       </div>
       <form
         onSubmit={(e) => {

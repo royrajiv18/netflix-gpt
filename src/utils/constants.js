@@ -4,3 +4,12 @@ export const USER_AVATAR =
   "https://avatars.githubusercontent.com/u/15337782?s=400&u=e49123fd9764265f500df50e9efc943e80f01826&v=4";
 export const BACKGROUND_IMAGE =
   "https://assets.nflxext.com/ffe/siteui/vlv3/154a9550-ce07-4e28-819c-63185dd849f8/web/IN-en-20250106-TRIFECTA-perspective_27b02e7c-f668-4639-9e82-1a5485084b2a_medium.jpg";
+
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGI4YWVmOWM5MGRlMzA1Y2Q3MzM1YmJjYzhjYTA1MCIsIm5iZiI6MTczODY2NzM1Ny4yNzIsInN1YiI6IjY3YTFmNTVkYTc0ZDhlZTIzYjI2YjNjMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VTztVMzpxFaABpSf7gz0vR-_b2uVB9bbQl5UGG8wEJk",
+  },
+};

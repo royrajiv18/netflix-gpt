@@ -9,8 +9,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NGI4YWVmOWM5MGRlMzA1Y2Q3MzM1YmJjYzhjYTA1MCIsIm5iZiI6MTczODY2NzM1Ny4yNzIsInN1YiI6IjY3YTFmNTVkYTc0ZDhlZTIzYjI2YjNjMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VTztVMzpxFaABpSf7gz0vR-_b2uVB9bbQl5UGG8wEJk",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
@@ -30,5 +29,4 @@ export const SUPPORTED_LANGUAGES = [
   },
 ];
 
-export const OPENAI_KEY =
-  "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";
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

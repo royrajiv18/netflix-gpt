@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const useUpcomingMovies = () => {
   const dispatch = useDispatch();
 
-  const addUpcomingMovies = useSelector(
+  const addUpcomingMoviesFetch = useSelector(
     (store) => store.movies.addUpcomingMovies
   );
 
@@ -20,7 +20,7 @@ const useUpcomingMovies = () => {
   };
 
   useEffect(() => {
-    !addUpcomingMovies && getUpcomingMovies();
+    !addUpcomingMoviesFetch && getUpcomingMovies();
   }, []);
 };
 

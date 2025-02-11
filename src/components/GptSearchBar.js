@@ -11,7 +11,7 @@ const GptSearchBar = () => {
 
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/search/movie?query" +
+      "https://api.themoviedb.org/3/search/movie?query=" +
         movie +
         "&include_adult=false&language=en-US&page=1",
       API_OPTIONS
@@ -28,10 +28,19 @@ const GptSearchBar = () => {
       searchText.current.value +
       ". Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Movie1, Movie2, Movie3, Movie4, Movie5";
 
-    const gptResults = await openAI.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "gpt-3.5-turbo",
-    });
+    // const gptResults = await openAI.chat.completions.create({
+    //   messages: [{ role: "user", content: gptQuery }],
+    //   model: "gpt-3.5-turbo",
+    // });
+    const gptResults = {
+      choices: [
+        {
+          message: {
+            content: "Don,Sholay,Padosan,Golmaal,Chupke Chupke",
+          },
+        },
+      ],
+    };
     if (!gptResults.choices) {
       // TODO: write error handling
     }
@@ -55,9 +64,9 @@ const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
 
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="pt-[35%] md:pt-[10%] flex justify-center">
       <form
-        className="bg-black w-1/2 grid grid-cols-12"
+        className="bg-black w-full md:w-1/2 grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input

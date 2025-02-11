@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
 
-  const nowPlayingMovies = useSelector(
+  const nowPlayingMoviesFetch = useSelector(
     (store) => store.movies.nowPlayingMovies
   );
 
@@ -20,7 +20,7 @@ const useNowPlayingMovies = () => {
   };
 
   useEffect(() => {
-    !nowPlayingMovies && getNowPlayingMovies();
+    !nowPlayingMoviesFetch && getNowPlayingMovies();
   }, []);
 };
 

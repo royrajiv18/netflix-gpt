@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const useTopRatedMovies = () => {
   const dispatch = useDispatch();
 
-  const addTopRatedMovies = useSelector(
+  const addTopRatedMoviesFetch = useSelector(
     (store) => store.movies.addTopRatedMovies
   );
 
@@ -20,7 +20,7 @@ const useTopRatedMovies = () => {
   };
 
   useEffect(() => {
-    !addTopRatedMovies && getPopularMovies();
+    !addTopRatedMoviesFetch && getPopularMovies();
   }, []);
 };
 
